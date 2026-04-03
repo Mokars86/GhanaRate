@@ -55,7 +55,7 @@ export default function Dashboard() {
 
       {/* Quick Actions Grid */}
       <h3 className="mt-4" style={{ marginBottom: '0.5rem' }}>Quick Actions</h3>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+      <div className="desktop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
         <button 
           className="card card-interactive flex-column align-center text-center" 
           style={{ padding: '1rem', border: 'none', cursor: 'pointer' }}

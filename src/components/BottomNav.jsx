@@ -19,7 +19,7 @@ export default function BottomNav() {
   ];
 
   return (
-    <nav className="glass-panel" style={{
+    <nav className="glass-panel hide-on-desktop" style={{
       position: 'fixed',
       bottom: 0,
       left: 0,

@@ -14,7 +14,7 @@ export default function Header() {
   const showBackButton = location.pathname !== '/dashboard';
 
   return (
-    <header className="glass-panel" style={{
+    <header className="glass-panel hide-on-desktop" style={{
       position: 'sticky',
       top: 0,
       zIndex: 50,
