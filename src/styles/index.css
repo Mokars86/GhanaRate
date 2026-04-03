@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 :root {
   /* Brand Colors - Ghana Theme */
   --color-primary: #006B3F; /* Forest Green */
@@ -19,7 +21,7 @@
   --color-white: #FFFFFF;
 
   /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
   /* Borders & Shadows */
   --radius-sm: 8px;
@@ -45,7 +47,12 @@
 
 html, body {
   font-family: var(--font-family);
-  background-color: var(--color-surface-gray);
+  background: 
+    radial-gradient(circle at 15% 10%, rgba(0, 107, 63, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(252, 209, 22, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(206, 17, 38, 0.03) 0%, transparent 50%),
+    var(--color-surface-gray);
+  background-attachment: fixed;
   color: var(--color-dark-gray);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,11 +70,11 @@ html, body {
 
 /* Glassmorphism Classes */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: var(--shadow-glass);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 40px -10px rgba(0, 40, 20, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* Typography styles */
@@ -113,13 +120,14 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 15px rgba(0, 107, 63, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
-  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, #004226 0%, var(--color-primary-dark) 100%);
+  box-shadow: 0 6px 20px rgba(0, 107, 63, 0.35);
 }
 
 .btn-secondary {
@@ -167,21 +175,25 @@ p {
 .input-field:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px var(--color-primary-light);
+  box-shadow: 0 0 0 4px rgba(0, 107, 63, 0.15), 0 4px 12px rgba(0,0,0,0.03);
+  transform: translateY(-1px);
 }
 
 /* Cards */
 .card {
-  background-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   padding: 1.5rem;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card-interactive:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -8px rgba(0, 107, 63, 0.15);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 /* Badges */
@@ -235,6 +247,12 @@ p {
 @keyframes slideInRight {
   from { transform: translateX(20px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ================================= */

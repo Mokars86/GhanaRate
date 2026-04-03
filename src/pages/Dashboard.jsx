@@ -17,10 +17,14 @@ export default function Dashboard() {
       <div 
         className="card card-interactive"
         style={{
-          background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%)',
+          background: 'linear-gradient(135deg, #00A65F 0%, var(--color-primary) 50%, var(--color-primary-dark) 100%)',
+          backgroundSize: '200% 200%',
+          animation: 'gradientFlow 8s ease infinite',
           color: 'white',
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          border: 'none',
+          boxShadow: '0 15px 35px -5px rgba(0, 107, 63, 0.4)'
         }}
       >
         <div style={{ position: 'relative', zIndex: 1 }}>
